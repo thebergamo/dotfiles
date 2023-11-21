@@ -18,9 +18,9 @@ fi
 # Check if .zshrc synlink exists
 
 zshConfig="~/.zshrc"
-if [ -L "${zshConfig}" ]; then
+if [ ! -L "${zshConfig}" ]; then
   echo "=> File doesn't exist"
-  ln ~/.zshrc ~/.config/.zshrc
+  ln -s ~/.config/.zshrc ~/.zshrc
 fi
 
 # check Workspace directory
